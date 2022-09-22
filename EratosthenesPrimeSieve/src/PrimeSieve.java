@@ -14,15 +14,26 @@ public class PrimeSieve {
     static EratosthenesPrimeSieve prime = new EratosthenesPrimeSieve() {
         @Override
         public boolean isPrime(int p) {
-            boolean isPrimenumber = true;
-            for (int i = 2; i <= p; i++){
-                isPrimenumber = true;
-                for (int j = 2; j < i && isPrimenumber; j++){
-                    if (i%j == 0)
-                        isPrimenumber = false;
+            boolean[] gestrichen = new boolean[p];
+            for (int i = 2; i <= gestrichen.length; i++){
+                gestrichen[i] = false;
+            }
+            for (int i = 2; i <= Math.sqrt(p); i++){
+                if(gestrichen[i] == false){
+                    System.out.println(i);
+                    System.out.println(", ");
+                    for (int j = i*i; j <= p; j += i){
+                        gestrichen[j] = true;
+                    }
                 }
             }
-            return isPrimenumber;
+            for (int i = Math.sqrt(p)+1; i <= p; i++){
+                if (gestrichen[i] == false){
+                    System.out.println(i);
+                    System.out.println(", ");
+                }
+            }
+            return true;
         }
 
         @Override
