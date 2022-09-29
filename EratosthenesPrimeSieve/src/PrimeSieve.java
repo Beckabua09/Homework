@@ -29,8 +29,6 @@ public class PrimeSieve {
                     numbers.add(i);
                 }
             }
-
-
             return false;
         }
 
