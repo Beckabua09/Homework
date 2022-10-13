@@ -18,11 +18,10 @@ public class Main {
         System.out.println("Geben Sie nun den Divider ein.");
         System.out.print("divider: ");
         int divider = sc.nextInt();
-
-
         getNumbers();
         for (int i : numbers){
-            System.out.println(i + ", ");
+            Task task = new Task(i, divider);
+            task.run();
         }
     }
 
