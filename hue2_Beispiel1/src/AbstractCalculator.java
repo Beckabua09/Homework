@@ -15,6 +15,4 @@ public abstract class AbstractCalculator {
     public abstract Number subtract(Number a, Number b);
     public abstract Number multiply(Number a, Number b);
     public abstract Number devide(Number a, Number b);
-
-
 }
